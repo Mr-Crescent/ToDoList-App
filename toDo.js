@@ -15,6 +15,7 @@ clickBtn.addEventListener("click", ()=> {
 
         const uncheckedImg = document.createElement("img")
         uncheckedImg.src = "./images/unchecked-50.png"
+        uncheckedImg.style.cursor = "pointer"
         const elementCreated = document.createElement("h2")
         elementCreated.textContent = inputValue.value 
         divContainer.append(uncheckedImg, elementCreated, cancelImg)
@@ -30,5 +31,18 @@ clickBtn.addEventListener("click", ()=> {
         divContainer.classList.add("div-container")
 
         inputValue.value = ""
+
+        uncheckedImg.addEventListener("click", ()=> {
+            if(uncheckedImg.src.includes("unchecked-50.png")) {
+                 uncheckedImg.src = "./images/checked.png"
+            } else {
+                uncheckedImg.src = "./images/unchecked-50.png"
+            }         
+        })
+
+        cancelImg.addEventListener("click", ()=> {
+            divContainer.remove()
+        })
     }
+
 })
