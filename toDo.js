@@ -33,10 +33,13 @@ clickBtn.addEventListener("click", ()=> {
         inputValue.value = ""
 
         uncheckedImg.addEventListener("click", ()=> {
+            
             if(uncheckedImg.src.includes("unchecked-50.png")) {
-                 uncheckedImg.src = "./images/checked.png"
+                uncheckedImg.src = "./images/checked.png"
+                elementCreated.style.textDecoration = "line-through"
             } else {
                 uncheckedImg.src = "./images/unchecked-50.png"
+                elementCreated.style.textDecoration = "none"
             }         
         })
 
